@@ -17,6 +17,7 @@
 agent_conf_file="/etc/amplify-agent/agent.conf"
 agent_log_file="/var/log/amplify-agent/agent.log"
 nginx_status_conf="/etc/nginx/conf.d/stub_status.conf"
+nginx_log_file="/var/log/nginx/access.log"
 api_key=""
 amplify_imagename=""
 
@@ -71,6 +72,10 @@ if [ $? != 0 ]; then
     echo "couldn't start the agent, please check ${agent_log_file}"
     exit 1
 fi
+
+# 持续输出日志
+echo "===> output nginx log: ${nginx_log_file} <==="
+tail -f ${nginx_log_file}
 
 wait ${nginx_pid}
 

@@ -1,5 +1,5 @@
-FROM nginx:1.13
-MAINTAINER NGINX Amplify Engineering
+FROM nginx:1.19.0
+MAINTAINER Nginx-1.19.0 + Amplify
 
 # Install the NGINX Amplify Agent
 RUN apt-get update \
@@ -21,7 +21,7 @@ RUN unlink /var/log/nginx/access.log \
     && chmod 644 /var/log/nginx/*log
 
 # Copy nginx stub_status config
-COPY ./conf.d/stub_status.conf /etc/nginx/conf.d
+COPY ./conf.d/* /etc/nginx/conf.d/
 
 # API_KEY is required for configuring the NGINX Amplify Agent.
 # It could be your real API key for NGINX Amplify here if you wanted
@@ -49,5 +49,11 @@ COPY ./entrypoint.sh /entrypoint.sh
 
 # TO set/override API_KEY and AMPLIFY_IMAGENAME when starting an instance:
 # docker run --name my-nginx1 -e API_KEY='..effc' -e AMPLIFY_IMAGENAME="service-name" -d nginx-amplify
+EXPOSE 80
 
 ENTRYPOINT ["/entrypoint.sh"]
+
+# win10 编译前建议使用 sstap-1.0.9.7 开启全局代理
+# docker build -t geekyouth/nginx-amplify:1.19.0 -f Dockerfile .
+# docker push geekyouth/nginx-amplify:1.19.0
+#

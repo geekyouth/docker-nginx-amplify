@@ -1,6 +1,5 @@
 ###
-GET localhost:80
-Content-Type: application/json; charset=UTF-8
+GET {{HOST}}:80
 
 #
 {
@@ -24,8 +23,7 @@ Content-Type: application/json; charset=UTF-8
 #
 
 ###
-GET localhost:80
-Content-Type: application/json; charset=UTF-8
+GET {{HOST}}:80
 gid: gid_01
 
 #
@@ -49,8 +47,7 @@ gid: gid_01
 #
 
 ###
-GET localhost:80
-Content-Type: application/json; charset=UTF-8
+GET {{HOST}}:80
 gid: gid_06
 
 #

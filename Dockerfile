@@ -8,7 +8,7 @@ RUN apt-get update \
     && curl -fs https://nginx.org/keys/nginx_signing.key | apt-key add - > /dev/null 2>&1 \
     && apt-get update \
     && apt-get install -qqy nginx-amplify-agent \
-    && apt-get purge -qqy curl apt-transport-https apt-utils gnupg1 \
+    && apt-get purge -qqy apt-transport-https apt-utils gnupg1 \
     && rm -rf /etc/apt/sources.list.d/nginx-amplify.list \
     && rm -rf /var/lib/apt/lists/*
 

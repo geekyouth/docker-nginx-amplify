@@ -20,7 +20,7 @@ services:
       AMPLIFY_IMAGENAME: docker-nginx-sz
     networks:
       - elastic
-  
+
   # https://www.elastic.co/guide/en/elastic-stack-get-started/7.9/get-started-docker.html
   cluster01:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.9.3
@@ -42,7 +42,7 @@ services:
         hard: -1
     networks:
       - elastic
-  
+
   cluster02:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.9.3
     hostname: cluster02
@@ -63,7 +63,7 @@ services:
         hard: -1
     networks:
       - elastic
-  
+
   cluster03:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.9.3
     hostname: cluster03
@@ -89,5 +89,7 @@ networks:
   elastic:
     driver: bridge
 
-# docker-compose -f .\nginx-es-compose.yaml up -d
-# docker-compose -f .\nginx-es-compose.yaml down
+# docker-compose -f nginx-es-compose.yaml up -d
+# docker-compose -f nginx-es-compose.yaml down
+
+# git clone -c http.proxy="http://lx:10800" https://github.com/geekyouth/docker-nginx-amplify

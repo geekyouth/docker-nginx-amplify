@@ -1,5 +1,5 @@
 ###
-GET {{HOST}}:80
+GET {{HOST}}:9200
 
 #
 {
@@ -23,7 +23,7 @@ GET {{HOST}}:80
 #
 
 ###
-GET {{HOST}}:80
+GET {{HOST}}:9200
 gid: gid_01
 
 #
@@ -47,7 +47,7 @@ gid: gid_01
 #
 
 ###
-GET {{HOST}}:80
+GET {{HOST}}:9200
 gid: gid_06
 
 #

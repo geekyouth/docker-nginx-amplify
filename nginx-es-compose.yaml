@@ -13,7 +13,7 @@ services:
       # - ./conf.d:/etc/nginx/conf.d
       - ./nginx.conf:/etc/nginx/nginx.conf
     ports:
-      - "80:80"
+      - "9200:80"
     environment:
       NGINX_PORT: 80
       API_KEY: 0451f483e67e42d7db7644554ca48e08 # 自己申请 https://amplify.nginx.com/
